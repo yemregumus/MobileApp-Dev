@@ -1,0 +1,7 @@
+{
+  "name": "angular-reactive-forms-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
