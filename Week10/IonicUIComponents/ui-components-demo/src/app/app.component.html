@@ -1,3 +1,28 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- code to define the menu -->
+  <ion-menu side="start" contentId="my-router">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="menu-title"> Menu </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>My Files</ion-item>
+        <ion-item>Shared With me</ion-item>
+        <ion-item>Starred</ion-item>
+        <ion-item>Recent</ion-item>
+        <ion-item
+          (click)="closeMenu()"
+          routerLink="/second-page"
+          routerDirection="forward"
+        >
+          Second Page
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- router-outlet -->
+  <ion-router-outlet id="my-router"></ion-router-outlet>
 </ion-app>
