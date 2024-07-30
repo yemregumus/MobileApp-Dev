@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Library_yunus.BooksListPage"
+             Title="Books List">
+
+    <!-- Main container with padding around the content -->
+    <StackLayout Padding="20">
+
+        <!-- Title label centered at the top of the page -->
+        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="28" FontFamily="Georgia">Book List</Label>
+
+        <!-- Welcome label for the current user, centered below the title -->
+        <Label x:Name="welcomeLabel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="16" FontFamily="Georgia" />
+
+        <!-- ListView to display the list of books -->
+        <ListView x:Name="booksListView" ItemSelected="OnBookSelected" ItemTapped="OnBookTapped">
+
+            <!-- Template for each item in the ListView -->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <!-- Context actions for each book item (appears on long press) -->
+                        <ViewCell.ContextActions>
+                            <!-- Checkout action, not destructive -->
+                            <MenuItem Text="Checkout" Clicked="OnCheckoutClicked" IsDestructive="false" />
+                            <!-- Return action, marked as destructive -->
+                            <MenuItem Text="Return" Clicked="OnReturnClicked" IsDestructive="true" />
+                        </ViewCell.ContextActions>
+
+                        <!-- Layout for the book item details -->
+                        <StackLayout>
+                            <!-- Label for the book title -->
+                            <Label FontSize="14" Text="{Binding Title}"/>
+                            <!-- Label for the book author with padding -->
+                            <Label FontSize="14" Text="{Binding Author}" Padding="10,0,0,10"/>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Label for displaying warnings or messages to the user -->
+        <Label x:Name="warningLabel" BackgroundColor="#fff3cb" TextColor="#968a50" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+    </StackLayout>
+</ContentPage>

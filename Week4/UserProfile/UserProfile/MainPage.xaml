@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UserProfile.MainPage"
+             Title="User Profile">
+
+    <StackLayout Spacing="20" Padding="16">
+        <Label Text="Enter Name" FontSize="21" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="nameEntry" Placeholder="Enter your name"/>
+        <Label Text="Enter Email" FontSize="21" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="emailEntry" Placeholder="Enter your email"/>
+        <Label Text="Enter Profile Picture URL" FontSize="21" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="profilePictureEntry" Placeholder="Enter profile picture URL"/>
+        <Button Text="Submit" Clicked="OnSubmitButtonClicked"/>
+    </StackLayout>
+
+</ContentPage>

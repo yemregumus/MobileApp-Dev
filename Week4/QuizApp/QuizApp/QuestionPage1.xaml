@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizApp.QuestionPage1"
+             Title="Question 1">
+    <StackLayout Padding="20">
+        <Label Text="What is the capital of France?" FontSize="24" />
+        <StackLayout x:Name="Answers">
+            <RadioButton x:Name="rbBerlin" Content="Berlin" GroupName="Answers" />
+            <RadioButton x:Name="rbMadrid" Content="Madrid" GroupName="Answers" />
+            <RadioButton x:Name="rbParis" Content="Paris" GroupName="Answers" />
+            <RadioButton x:Name="rbRome" Content="Rome" GroupName="Answers" />
+        </StackLayout>
+        <Button Text="Next" Clicked="OnNextClicked" />
+    </StackLayout>
+</ContentPage>

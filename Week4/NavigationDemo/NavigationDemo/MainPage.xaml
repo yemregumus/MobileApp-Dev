@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationDemo.MainPage" Title="Home Page">
+
+    <StackLayout>
+        <Label Text="Welcome to Screen 1" FontSize="21" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="name" Placeholder="Enter your name"/>
+        <Entry x:Name="age" Placeholder="Enter your age"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="Can you vote?" FontSize="18"/>
+            <Switch x:Name="canVote" IsToggled="False"/>
+        </StackLayout>
+        <Button Text="Go to Screen 2" Clicked="Button_Clicked" />
+    </StackLayout>
+
+</ContentPage>

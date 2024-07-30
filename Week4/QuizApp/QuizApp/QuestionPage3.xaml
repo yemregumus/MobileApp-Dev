@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizApp.QuestionPage3"
+             Title="Question 3">
+    <StackLayout Padding="20">
+        <Label Text="What is the color of the sky?" FontSize="24" />
+        <StackLayout x:Name="Answers">
+            <RadioButton x:Name="rbBlue" Content="Blue" GroupName="Answers" />
+            <RadioButton x:Name="rbGreen" Content="Green" GroupName="Answers" />
+            <RadioButton x:Name="rbRed" Content="Red" GroupName="Answers" />
+            <RadioButton x:Name="rbYellow" Content="Yellow" GroupName="Answers" />
+        </StackLayout>
+        <Button Text="Finish" Clicked="OnFinishClicked" />
+    </StackLayout>
+</ContentPage>

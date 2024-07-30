@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    LoginPage.xaml
+    This is the XAML code for the Login Page in the Library app.
+    It contains the UI elements for user login including username, password fields, a login button, and an error label.
+-->
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Library_yunus.LoginPage"
+             Title="Login">
+
+    <!-- StackLayout for organizing the login page elements with padding -->
+    <StackLayout Padding="20">
+
+        <!-- Entry for the username input -->
+        <Entry x:Name="usernameEntry" Placeholder="Username" />
+
+        <!-- Entry for the password input, with IsPassword set to true for hiding the text -->
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" />
+
+        <!-- Button for triggering the login process -->
+        <Button Text="Login" Clicked="OnLoginButtonClicked" />
+
+        <!-- Label for displaying error messages, initially hidden -->
+        <Label x:Name="errorLabel" BackgroundColor="LightPink" TextColor="Red" IsVisible="False" HorizontalTextAlignment="Center" Padding="8,7,8,7" />
+
+    </StackLayout>
+</ContentPage>

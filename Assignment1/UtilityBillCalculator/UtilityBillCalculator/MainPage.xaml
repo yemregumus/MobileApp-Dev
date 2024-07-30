@@ -1,0 +1,58 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UtilityBillCalculator.MainPage">
+
+    <StackLayout Padding="20,10,20,10">
+        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="28" FontFamily="Georgia" Padding="30,10,30,10">Utility Bill Calculator</Label>
+
+        <Label>Choose Your Province</Label>
+        <Picker x:Name="provincePicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Alberta (AB)</x:String>
+                    <x:String>British Columbia (BC)</x:String>
+                    <x:String>Ontario (ON)</x:String>
+                    <x:String>Newfoundland Labrador (NL)</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label>Daytime usage (kwh)</Label>
+        <Entry x:Name="txtDayUse" Placeholder="Enter the daytime usage"></Entry>
+        <Label>Evening usage (kwh)</Label>
+        <Entry x:Name="txtEveningUse" Placeholder="Enter the evening usage"></Entry>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="16" Grid.Column="0" Grid.Row="0">Did you use a renewable energy source?</Label>
+            <Switch x:Name="renewableSwitch" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"></Switch>
+
+            <Button BackgroundColor="#d3ecf3" TextColor="#1c4e57" BorderRadius="10" Grid.Row="1" Text="Calculate" Clicked="OnCalculateClicked"></Button>
+            <Button BackgroundColor="#d3ecf3" TextColor="#1c4e57" BorderRadius="10" Grid.Row="1" Grid.Column="1" Text="Reset" Clicked="OnResetClicked"></Button>
+        </Grid>
+
+        
+        <!-- Error Label -->
+        <Label x:Name="errorLabel" BackgroundColor="LightPink" TextColor="Red" IsVisible="False" HorizontalTextAlignment="Center" Padding="10,15,10,15"></Label>
+
+        <!-- Results Stack -->
+        <StackLayout x:Name="resultsStack" IsVisible="False">
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="28" FontFamily="Georgia">Charge Breakdown</Label>
+            <Label x:Name="daytimeChargeLabel"></Label>
+            <Label x:Name="eveningChargeLabel"></Label>
+            <Label x:Name="totalUsageChargeLabel"></Label>
+            <Label x:Name="salesTaxLabel"></Label>
+            <Label x:Name="environmentalRebateLabel"></Label>
+
+            <!-- Frame for total bill amount -->
+            <Frame BackgroundColor="#fff3cb" Padding="10" Margin="5,5,5,0">
+                <Label x:Name="totalBillLabel" FontSize="20" TextColor="#968a50" HorizontalTextAlignment="Center"></Label>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
