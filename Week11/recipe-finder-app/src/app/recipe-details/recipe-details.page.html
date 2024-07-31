@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recipe Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Recipe Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="recipe">
+    <ion-img [src]="recipe.image"></ion-img>
+    <h2>{{ recipe.title }}</h2>
+    <div [innerHTML]="summary"></div>
+    <h3>Ingredients</h3>
+    <ul>
+      <li *ngFor="let ingredient of recipe.extendedIngredients">
+        {{ ingredient.original }}
+      </li>
+    </ul>
+    <h3>Instructions</h3>
+    <div [innerHTML]="instructions"></div>
+    <h3>Nutrition</h3>
+    <ul>
+      <li *ngFor="let nutrient of recipe.nutrition.nutrients">
+        {{ nutrient.title }}: {{ nutrient.amount }} {{ nutrient.unit }}
+      </li>
+    </ul>
+  </div>
+</ion-content>

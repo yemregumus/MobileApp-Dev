@@ -1,0 +1,7 @@
+{
+  "name": "recipe-finder-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
