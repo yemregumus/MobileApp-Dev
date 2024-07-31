@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>News Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">News Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="article">
+    <ion-img [src]="article.urlToImage"></ion-img>
+    <h2>{{ article.title }}</h2>
+    <p>Author: {{ article.author }}</p>
+    <p>Source: {{ article.source.name }}</p>
+    <div [innerHTML]="article.content"></div>
+  </div>
+</ion-content>

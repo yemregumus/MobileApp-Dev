@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>News List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">News List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-searchbar
+    [(ngModel)]="searchQuery"
+    (ionInput)="searchNews()"
+  ></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let article of articles" (click)="viewArticle(article)">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="article.urlToImage"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.author }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
