@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Countries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      *ngFor="let country of countries"
+      (click)="goToDetail(country.alpha3Code)"
+    >
+      <ion-thumbnail slot="start">
+        <img [src]="country.flag" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ country.name }}</h2>
+        <p>{{ country.alpha3Code }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
