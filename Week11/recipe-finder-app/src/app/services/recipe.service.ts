@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RecipeService {
-  private apiKey = '46be5e168db24e0f9f4caa875c4e6235';
+  private apiKey = 'key here';
   private apiUrl = 'https://api.spoonacular.com/recipes';
 
   constructor(private http: HttpClient) {}
