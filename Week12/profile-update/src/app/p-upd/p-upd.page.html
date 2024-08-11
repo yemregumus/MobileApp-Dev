@@ -1,0 +1,53 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+  <div class="form-group">
+    <label for="fullName">Full Name:</label>
+    <input id="fullName" formControlName="fullName" class="form-control" />
+    <div
+      class="error-message"
+      *ngIf="profileForm.get('fullName')?.invalid && profileForm.get('fullName')?.touched"
+    >
+      <ng-container *ngIf="profileForm.get('fullName')?.errors?.['required']">
+        Full Name is required.
+      </ng-container>
+      <ng-container *ngIf="profileForm.get('fullName')?.errors?.['minlength']">
+        Full Name must be at least 3 characters long.
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" class="form-control" />
+    <div
+      class="error-message"
+      *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched"
+    >
+      <ng-container *ngIf="profileForm.get('email')?.errors?.['required']">
+        Email is required.
+      </ng-container>
+      <ng-container *ngIf="profileForm.get('email')?.errors?.['email']">
+        Invalid email format.
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number:</label>
+    <input id="phone" formControlName="phone" class="form-control" />
+    <div
+      class="error-message"
+      *ngIf="profileForm.get('phone')?.invalid && profileForm.get('phone')?.touched"
+    >
+      <ng-container *ngIf="profileForm.get('phone')?.errors?.['required']">
+        Phone number is required.
+      </ng-container>
+      <ng-container *ngIf="profileForm.get('phone')?.errors?.['pattern']">
+        Phone number must follow the format XXX-XXX-XXXX.
+      </ng-container>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-button" [disabled]="profileForm.invalid">
+    Submit
+  </button>
+</form>

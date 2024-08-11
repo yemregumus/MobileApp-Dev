@@ -1,0 +1,7 @@
+{
+  "name": "profile-update",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
