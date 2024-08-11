@@ -11,7 +11,7 @@ export class HomePage {
   city: string = '';
   weather: any;
 
-  private apiKey: string = '40cffaaab15a4a1c231e1d390022e1c8'; // Replace with your OpenWeatherMap API key
+  private apiKey: string = 'key here';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
