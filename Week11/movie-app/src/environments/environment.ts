@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  tmdbApiKey: '20b1cafbbd7e7e7f17b7d3af1779a232',
+  tmdbApiKey: 'key here',
 };
 
 /*
