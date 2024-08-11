@@ -37,7 +37,7 @@ export class HomePage implements AfterViewInit {
       this.newMap = await GoogleMap.create({
         id: 'my-cool-map',
         element: this.mapRef.nativeElement,
-        apiKey: 'AIzaSyAzddKcWHFxstsZzqHHuZjpGJb2Kpy4Ic8',
+        apiKey: 'key here',
         config: {
           center: {
             lat: this.lat || 33.6, // Use current location if available
